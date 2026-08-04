@@ -1,9 +1,15 @@
 export const site = {
   name: "Houston LEAD",
+  legalName: "L.E.A.D. Houston",
+  acronym: "Lead Exchange And Development",
   tagline: "Empower Growth.",
+  subtitle: "Business Networking | Peer Advisory | Growth Development",
   description:
     "Houston LEAD is the premier community for business leaders ready to connect, collaborate, and grow across Greater Houston.",
   email: "info@houstonlead.com",
+  videoUrl:
+    "https://video.wixstatic.com/video/826f72_0c045376c6c847d5856ab0ae3a293f76/720p/mp4/file.mp4",
+  logo: "/logo.png",
   address: {
     street: "Greater Houston Area",
     city: "Houston, TX",
@@ -15,9 +21,130 @@ export const site = {
   mapsUrl: "https://maps.google.com/?q=Houston+TX",
   founded: 2013,
   experienceYears: 20,
+  webSupportUrl: "mailto:info@houstonlead.com?subject=Website%20Support",
 };
 
+export type SocialLink = {
+  name: string;
+  href: string;
+  platform: "linkedin" | "facebook" | "instagram" | "youtube" | "meetup" | "eventbrite";
+  description?: string;
+};
+
+export const socialLinks: SocialLink[] = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/houston-lead/",
+    platform: "linkedin",
+    description: "Company updates and professional networking",
+  },
+  {
+    name: "Facebook Group",
+    href: "https://www.facebook.com/groups/390143701023687",
+    platform: "facebook",
+    description: "Houston LEAD Group — open to the public",
+  },
+  {
+    name: "Facebook Page",
+    href: "https://www.facebook.com/HoustonLEAD",
+    platform: "facebook",
+    description: "Official Houston LEAD page",
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/houston.lead/",
+    platform: "instagram",
+    description: "@houston.lead",
+  },
+];
+
+export const socialCommunities = [
+  { name: "Houston LEAD West", href: "https://www.facebook.com/groups/houstonleadwest/" },
+  { name: "Houston LEAD North", href: "https://www.facebook.com/groups/houstonleadnorth/" },
+  { name: "Houston Women LEADers", href: "https://www.facebook.com/groups/leadhoustonwomenbusinessconnect/" },
+  { name: "Houston Networking Community", href: "https://www.facebook.com/groups/houstonnetworkingcommunity/" },
+  { name: "Houston Entrepreneurs", href: "https://www.facebook.com/groups/277979762279354" },
+  { name: "Conroe Chapter", href: "https://www.facebook.com/ConroeChapter/" },
+  { name: "The Woodlands Lunch & Earn", href: "https://www.facebook.com/TheWoodlandsLunchAndEarn/" },
+  { name: "LEAD Online Network", href: "https://www.facebook.com/groups/1706178343381230" },
+];
+
+export const presidentMessage = {
+  author: "R. D. Yoder",
+  title: "Co-Founder and President",
+  intro: "From the desk of R. D. Yoder —",
+  body: [
+    "LEAD was founded on a servant leadership model focused on peer advisory, quality referrals, and business growth. Our chapters support one another through ongoing relationships, structured meetings, education, and encouragement.",
+    "If you're looking to grow your business or entrepreneurial venture, we invite you to visit a LEAD chapter near you. LEAD is Houston's answer for business networking, peer advisory, and more—with chapters throughout Greater Houston.",
+  ],
+  questions: [
+    "Are you receiving and giving quality referrals?",
+    "Are you seeing a strong return on your networking investment?",
+    "Do you have trusted peers helping you grow your business?",
+  ],
+  closing:
+    "Our proven LEAD Networking System™ includes structured and quality referrals, weekly meetings, peer support, member tools, social networking opportunities, and a growth plan designed to maximize results. Make this your best year yet—come grow with LEAD.",
+};
+
+export const welcomeCopy = {
+  heading: "Welcome to Houston LEAD!",
+  paragraphs: [
+    "Houston LEAD offers more than networking—we provide a strategic environment for business growth, professional development, and peer collaboration.",
+    "Our chapters go beyond events to create meaningful, results-driven connections through structured referrals, peer advisory, and practical growth tools.",
+    "We call this “Empower Growth”.",
+    "Members gain a built-in referral team, sales support network, and trusted peer advisors—working together with purpose and accountability.",
+    "Backed by over 20 years of experience, Houston LEAD is committed to helping you reach the next level.",
+  ],
+  cta: "It's time. Let's grow together!",
+};
+
+export const quickLinks = [
+  {
+    title: "Find A Professional",
+    description:
+      "Find trusted professionals for your home, finances, or business. Search by category and location.",
+    to: "/professionals",
+    icon: "◎",
+  },
+  {
+    title: "Find A Chapter",
+    description:
+      "Chapters across Greater Houston—find one near you and start building powerful connections.",
+    to: "/chapters",
+    icon: "◈",
+  },
+  {
+    title: "Upcoming Events",
+    description: "Check out our calendar of events and learn more about Houston LEAD.",
+    to: "/events",
+    icon: "◆",
+  },
+  {
+    title: "How To Apply",
+    description: "Discover LEAD benefits and apply for membership.",
+    to: "/apply",
+    icon: "↗",
+  },
+  {
+    title: "Membership",
+    description: "Review benefits, tiers, and everything included with Houston LEAD membership.",
+    to: "/membership",
+    icon: "◉",
+  },
+  {
+    title: "Sponsorships",
+    description: "Partner with us—sponsorship options to fit any business budget.",
+    to: "/sponsorships",
+    icon: "✦",
+  },
+];
+
 export const faqs = [
+  {
+    question: "What does LEAD stand for?",
+    answer:
+      "LEAD stands for Lead Exchange And Development. We focus on business networking, peer advisory, and growth development across Greater Houston.",
+  },
   {
     question: "What is Houston LEAD?",
     answer:
@@ -37,11 +164,6 @@ export const faqs = [
     question: "What membership levels are available?",
     answer:
       "We offer Basic ($275), Gold ($395), Platinum ($550), and Diamond ($999) annual memberships. Each tier includes core networking benefits with increasing visibility and marketing support.",
-  },
-  {
-    question: "Do I have to stay in one chapter?",
-    answer:
-      "Your home chapter is your primary group, but members can visit other LEAD chapters across Greater Houston—giving you access to a wide referral network.",
   },
   {
     question: "How do I start a new chapter?",

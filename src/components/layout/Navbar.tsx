@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useApp } from "@/context/AppContext";
 import { useScrollToTopOnClick } from "@/hooks/useScrollToTopOnClick";
 
+import { LogoLink } from "@/components/ui/Logo";
+
 const links = [
   { to: "/chapters", label: "Chapters" },
   { to: "/membership", label: "Membership" },
@@ -55,15 +57,7 @@ export function Navbar() {
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <Link
-          to="/"
-          onClick={scrollToTopOnClick("/")}
-          className="font-display text-xl font-bold tracking-tight"
-          data-cursor="pointer"
-        >
-          <span className="text-gradient">Houston</span>
-          <span className="text-ink"> LEAD</span>
-        </Link>
+        <LogoLink onClick={scrollToTopOnClick("/")} />
 
         <nav className="hidden lg:flex items-center gap-1">
           <div className="relative" ref={exploreRef}>

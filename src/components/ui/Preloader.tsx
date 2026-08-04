@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "@/context/AppContext";
+import { publicAsset } from "@/lib/publicAsset";
+import { site } from "@/data/site";
 
 export function Preloader() {
   const { setPreloaderDone } = useApp();
@@ -27,9 +29,11 @@ export function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             className="relative z-10 text-center"
           >
-            <div className="font-display text-3xl font-bold text-gradient mb-6">
-              Houston LEAD
-            </div>
+            <img
+              src={publicAsset(site.logo.replace(/^\//, ""))}
+              alt={site.name}
+              className="h-20 w-auto mx-auto mb-6 object-contain"
+            />
             <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden mx-auto">
               <motion.div
                 className="h-full bg-brand-light"

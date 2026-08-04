@@ -1,5 +1,5 @@
 import { usePageTitle } from "@/hooks/usePageTitle";
-import { principles, processSteps, site } from "@/data/site";
+import { principles, processSteps, presidentMessage, site, welcomeCopy } from "@/data/site";
 import { motion } from "framer-motion";
 import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
 import { ContactCTA } from "@/components/sections/ContactCTA";
@@ -13,18 +13,17 @@ export function AboutPage() {
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-16 items-start mb-20 md:mb-28">
           <Reveal>
             <p className="eyebrow mb-4">About us</p>
-            <h1 className="heading-xl mb-6">
+            <h1 className="heading-xl mb-4">
               Empower <span className="text-gradient">Growth</span>
             </h1>
+            <p className="text-sm text-ink-muted mb-6">{site.acronym}</p>
             <p className="text-xl text-ink-soft leading-relaxed max-w-2xl">
-              Houston LEAD is the premier community for business leaders ready to connect,
-              collaborate, and grow across Greater Houston.
+              {welcomeCopy.paragraphs[0]}
             </p>
             <p className="text-ink-soft leading-relaxed mt-5 max-w-2xl">
-              We offer more than networking—a strategic environment for business growth,
-              professional development, and peer collaboration. Founded in {site.founded} and
-              backed by over {site.experienceYears} years of networking experience, Houston LEAD
-              helps members build referral teams, sales support networks, and trusted peer advisors.
+              Founded in {site.founded} and backed by over {site.experienceYears} years of
+              networking experience, Houston LEAD helps members build referral teams, sales
+              support networks, and trusted peer advisors across Greater Houston.
             </p>
           </Reveal>
 
@@ -50,13 +49,34 @@ export function AboutPage() {
           </Reveal>
         </div>
 
+        <Reveal className="glass-panel rounded-2xl p-8 md:p-10 mb-20 md:mb-28">
+          <p className="font-mono text-xs uppercase tracking-wider text-brand-light mb-4">
+            {presidentMessage.intro}
+          </p>
+          <h2 className="heading-md mb-2">{presidentMessage.author}</h2>
+          <p className="text-sm text-ink-muted mb-6">{presidentMessage.title}</p>
+          <div className="space-y-4 text-ink-soft leading-relaxed max-w-3xl">
+            {presidentMessage.body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+          <div className="mt-8 glass-panel rounded-xl p-6 border-brand/10">
+            <p className="font-display font-semibold mb-4">Ask yourself:</p>
+            <ul className="space-y-2 text-ink-soft">
+              {presidentMessage.questions.map((q) => (
+                <li key={q} className="flex gap-2">
+                  <span className="text-brand-light">·</span>
+                  {q}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-ink-soft leading-relaxed">{presidentMessage.closing}</p>
+          </div>
+        </Reveal>
+
         <Reveal className="mb-6 md:mb-8">
           <p className="eyebrow mb-4">What we believe</p>
           <h2 className="heading-lg mb-4">Our principles</h2>
-          <p className="text-ink-soft max-w-2xl leading-relaxed">
-            Houston LEAD is built on structured referrals, peer advisory, and results-driven
-            connections that elevate your business.
-          </p>
         </Reveal>
 
         <RevealStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-20 md:mb-28">
@@ -78,9 +98,6 @@ export function AboutPage() {
         <Reveal className="mb-10 md:mb-14">
           <p className="eyebrow mb-4">How to join</p>
           <h2 className="heading-lg mb-4">Your path to membership</h2>
-          <p className="text-ink-soft max-w-2xl leading-relaxed">
-            Five steps from finding a chapter to building your referral network.
-          </p>
         </Reveal>
 
         <div className="relative mb-20 md:mb-28">
