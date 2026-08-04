@@ -2,6 +2,8 @@
 
 Modern marketing website for [Houston LEAD](https://houstonlead.com) — Greater Houston's premier business networking community.
 
+**Live site:** https://af-546.github.io/Houston_Lead/
+
 Built with the same polished stack as SoftwareDesign.io: React, Vite, Tailwind CSS, Framer Motion, and Lenis smooth scrolling.
 
 ## Development
@@ -17,6 +19,12 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+## Deploy (GitHub Pages)
+
+Pushes to `main` automatically deploy via GitHub Actions (`.github/workflows/main.yml`).
+
+The build uses `VITE_BASE_PATH=/${{ github.event.repository.name }}/` so assets resolve correctly on GitHub Pages project sites.
 
 ## Pages
 
