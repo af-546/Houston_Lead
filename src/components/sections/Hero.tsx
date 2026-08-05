@@ -1,4 +1,3 @@
-import { MagneticLink } from "@/components/ui/MagneticButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/data/site";
 import { HeroVideo } from "@/components/sections/HeroVideo";
@@ -26,12 +25,12 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.15}>
             <div className="flex flex-wrap gap-4">
-              <MagneticLink to="/apply" className="btn-primary">
+              <a href={`mailto:${site.email}?subject=Membership%20Inquiry`} className="btn-primary">
                 Join us →
-              </MagneticLink>
-              <MagneticLink to="/chapters" className="btn-ghost">
+              </a>
+              <a href={`mailto:${site.email}?subject=Chapter%20Inquiry`} className="btn-ghost">
                 Find a chapter
-              </MagneticLink>
+              </a>
             </div>
           </Reveal>
         </div>

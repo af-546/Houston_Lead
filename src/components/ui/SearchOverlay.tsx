@@ -1,44 +1,10 @@
-import { useEffect, useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "@/context/AppContext";
-import { chapters } from "@/data/chapters";
-import { benefits } from "@/data/benefits";
-
-const pages = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Chapters", path: "/chapters" },
-  { label: "Membership", path: "/membership" },
-  { label: "Find a Professional", path: "/professionals" },
-  { label: "Events", path: "/events" },
-  { label: "Sponsorships", path: "/sponsorships" },
-  { label: "Apply", path: "/apply" },
-  { label: "Contact", path: "/contact" },
-];
 
 export function SearchOverlay() {
   const { searchOpen, setSearchOpen } = useApp();
   const [query, setQuery] = useState("");
-
-  const results = useMemo(() => {
-    const q = query.toLowerCase();
-    if (!q) return [];
-    const items: { label: string; path: string; type: string }[] = [];
-    pages.forEach((p) => {
-      if (p.label.toLowerCase().includes(q))
-        items.push({ label: p.label, path: p.path, type: "Page" });
-    });
-    chapters.forEach((c) => {
-      if (c.name.toLowerCase().includes(q) || c.area.toLowerCase().includes(q))
-        items.push({ label: c.name, path: "/chapters", type: "Chapter" });
-    });
-    benefits.forEach((b) => {
-      if (b.title.toLowerCase().includes(q))
-        items.push({ label: b.title, path: "/membership", type: "Benefit" });
-    });
-    return items.slice(0, 8);
-  }, [query]);
 
   useEffect(() => {
     if (!searchOpen) setQuery("");
@@ -74,27 +40,12 @@ export function SearchOverlay() {
               autoFocus
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search chapters, pages, benefits..."
+              placeholder="Search..."
               className="w-full bg-transparent px-5 py-4 outline-none border-b border-white/10 text-ink placeholder:text-ink-muted"
             />
-            <ul className="max-h-72 overflow-y-auto py-2">
-              {query && results.length === 0 ? (
-                <li className="px-5 py-3 text-sm text-ink-muted">No results</li>
-              ) : (
-                results.map((item) => (
-                  <li key={`${item.path}-${item.label}`}>
-                    <Link
-                      to={item.path}
-                      onClick={() => setSearchOpen(false)}
-                      className="block px-5 py-3 text-sm text-ink-soft hover:bg-white/5 hover:text-brand-light transition-colors"
-                    >
-                      <span className="text-ink-muted text-xs mr-2">{item.type}</span>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))
-              )}
-            </ul>
+            <p className="px-5 py-4 text-sm text-ink-muted">
+              {query ? "No results on this page." : "Single-page site — scroll to explore."}
+            </p>
           </motion.div>
         </motion.div>
       )}

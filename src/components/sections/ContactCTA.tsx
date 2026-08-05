@@ -1,5 +1,5 @@
-import { MagneticLink } from "@/components/ui/MagneticButton";
 import { Reveal } from "@/components/ui/Reveal";
+import { site } from "@/data/site";
 
 export function ContactCTA() {
   return (
@@ -15,12 +15,15 @@ export function ContactCTA() {
               marketing partners—all with purpose and accountability.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <MagneticLink to="/apply" className="btn-primary">
+              <a
+                href={`mailto:${site.email}?subject=Membership%20Application`}
+                className="btn-primary"
+              >
                 Apply for membership
-              </MagneticLink>
-              <MagneticLink to="/contact" className="btn-ghost">
+              </a>
+              <a href={`mailto:${site.email}`} className="btn-ghost">
                 Contact us
-              </MagneticLink>
+              </a>
             </div>
           </div>
         </div>

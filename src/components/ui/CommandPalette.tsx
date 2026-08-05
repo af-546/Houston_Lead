@@ -4,17 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "@/context/AppContext";
 import { scrollToTop } from "@/lib/scrollToTop";
 
-const pages = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Chapters", path: "/chapters" },
-  { label: "Membership", path: "/membership" },
-  { label: "Find a Professional", path: "/professionals" },
-  { label: "Events", path: "/events" },
-  { label: "Sponsorships", path: "/sponsorships" },
-  { label: "Apply", path: "/apply" },
-  { label: "Contact", path: "/contact" },
-];
+const pages = [{ label: "Home", path: "/" }];
 
 export function CommandPalette() {
   const { commandOpen, setCommandOpen } = useApp();
@@ -94,7 +84,7 @@ export function CommandPalette() {
                 setQuery(e.target.value);
                 setSelected(0);
               }}
-              placeholder="Search pages..."
+              placeholder="Search..."
               className="w-full bg-transparent px-5 py-4 outline-none border-b border-white/10 text-ink placeholder:text-ink-muted"
             />
             <ul className="max-h-72 overflow-y-auto py-2">

@@ -1,7 +1,6 @@
-import { socialLinks, socialCommunities } from "@/data/site";
+import { socialCommunities, socialLinks, site } from "@/data/site";
 import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
 import { SocialLinks } from "@/components/ui/SocialLinks";
-import { MagneticLink } from "@/components/ui/MagneticButton";
 
 export function SocialSection() {
   return (
@@ -36,9 +35,9 @@ export function SocialSection() {
       </RevealStagger>
 
       <Reveal className="section-container mt-10 text-center">
-        <MagneticLink to="/contact" className="btn-ghost">
+        <a href={`mailto:${site.email}`} className="btn-ghost inline-flex">
           Questions? Contact us →
-        </MagneticLink>
+        </a>
       </Reveal>
     </section>
   );

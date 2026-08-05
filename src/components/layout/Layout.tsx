@@ -2,7 +2,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
-import { FullscreenMenu } from "./FullscreenMenu";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
@@ -35,7 +34,6 @@ export function Layout() {
           <CustomCursor />
           <ScrollProgress />
           <Navbar />
-          <FullscreenMenu />
           <main className="relative z-10">
             <AnimatePresence mode="wait">
               <PageTransition key={location.pathname}>
