@@ -48,17 +48,17 @@
   }
 
   .nav-bar {
-    background-color: rgba(12, 18, 34, 0.92);
+    background-color: rgba(18, 8, 28, 0.92);
     @apply backdrop-blur-xl border-b border-white/[0.08];
   }
 
   .nav-bar-scrolled {
-    background-color: rgba(12, 18, 34, 0.98);
+    background-color: rgba(18, 8, 28, 0.98);
     @apply border-white/10;
   }
 
   .nav-dropdown {
-    background-color: #0a0f1a;
+    background-color: #12081c;
     @apply rounded-xl border border-white/10 shadow-xl;
   }
 
@@ -71,7 +71,7 @@
   }
 
   .text-gradient-animated {
-    background: linear-gradient(90deg, #e4c04a, #c9a227, #a68520, #e4c04a);
+    background: linear-gradient(90deg, #ffcb05, #dec328, #8a7218, #ffcb05);
     background-size: 300% 100%;
     @apply bg-clip-text text-transparent animate-shimmer;
   }
@@ -93,7 +93,7 @@
   }
 
   .mockup-shell {
-    @apply relative overflow-hidden rounded-xl border border-white/10 bg-[#0a1020];
+    @apply relative overflow-hidden rounded-xl border border-white/10 bg-[#1c1229];
   }
 
   .mockup-shell::after {
@@ -115,7 +115,7 @@
   }
 
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3.5 font-display font-semibold text-white transition-all duration-300 hover:bg-brand-light hover:shadow-neonSm active:scale-[0.98];
+    @apply relative inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3.5 font-display font-semibold text-slate transition-all duration-300 hover:bg-brand-light hover:shadow-neonSm active:scale-[0.98];
   }
 
   .btn-ghost {
@@ -151,17 +151,17 @@
   .aurora-bg {
     background: radial-gradient(
         ellipse 80% 50% at 20% 40%,
-        rgba(201, 162, 39, 0.12),
+        rgba(222, 195, 40, 0.1),
         transparent 50%
       ),
       radial-gradient(
         ellipse 60% 40% at 80% 20%,
-        rgba(228, 192, 74, 0.08),
+        rgba(151, 222, 255, 0.07),
         transparent 50%
       ),
       radial-gradient(
         ellipse 50% 50% at 50% 80%,
-        rgba(166, 133, 32, 0.06),
+        rgba(40, 26, 57, 0.35),
         transparent 50%
       );
   }

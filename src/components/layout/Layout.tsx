@@ -3,7 +3,6 @@ import { AnimatePresence } from "framer-motion";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { CommandPalette } from "@/components/ui/CommandPalette";
 import { SearchOverlay } from "@/components/ui/SearchOverlay";
@@ -31,7 +30,6 @@ export function Layout() {
       {preloaderDone && (
         <>
           <AuroraBackground />
-          <CustomCursor />
           <ScrollProgress />
           <Navbar />
           <main className="relative z-10">

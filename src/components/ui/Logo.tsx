@@ -8,14 +8,19 @@ type LogoProps = {
   showText?: boolean;
 };
 
+const logoFrameClass =
+  "inline-flex items-center justify-center rounded-2xl bg-white/[0.04] ring-1 ring-white/10 shadow-logo overflow-hidden";
+
 export function Logo({ className = "", imageClassName = "h-10 w-auto", showText = false }: LogoProps) {
   return (
     <span className={`inline-flex items-center gap-3 ${className}`}>
-      <img
-        src={publicAsset(site.logo.replace(/^\//, ""))}
-        alt={`${site.name} logo`}
-        className={`object-contain ${imageClassName}`}
-      />
+      <span className={`${logoFrameClass} p-1.5`}>
+        <img
+          src={publicAsset(site.logo.replace(/^\//, ""))}
+          alt={`${site.name} logo`}
+          className={`object-contain rounded-xl ${imageClassName}`}
+        />
+      </span>
       {showText && (
         <span className="font-display font-bold tracking-tight text-lg">
           <span className="text-gradient">Houston</span>
@@ -36,7 +41,7 @@ export function LogoLink({
   imageClassName?: string;
 }) {
   return (
-    <Link to="/" onClick={onClick} className={className} data-cursor="pointer">
+    <Link to="/" onClick={onClick} className={className}>
       <Logo imageClassName={imageClassName} />
     </Link>
   );

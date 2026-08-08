@@ -34,7 +34,7 @@ export function ProcessInteractive() {
                   className={isLeft ? "lg:order-1 lg:pr-8" : "lg:order-2 lg:pl-8"}
                 >
                   <div className="glass-panel rounded-2xl p-6 md:p-8 hover:border-brand-light/20 transition-colors relative">
-                    <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-brand-light border-4 border-[#0a0f1a] shadow-neonSm z-10"
+                    <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-brand-light border-4 border-void shadow-neonSm z-10"
                       style={isLeft ? { right: "-1.35rem" } : { left: "-1.35rem" }}
                     />
                     <span className="font-mono text-xs text-brand-light">{stepNumber}</span>

@@ -29,11 +29,13 @@ export function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             className="relative z-10 text-center"
           >
-            <img
-              src={publicAsset(site.logo.replace(/^\//, ""))}
-              alt={site.name}
-              className="h-20 w-auto mx-auto mb-6 object-contain"
-            />
+            <span className="inline-flex items-center justify-center rounded-2xl bg-white/[0.04] ring-1 ring-white/10 shadow-logo overflow-hidden p-2 mb-6">
+              <img
+                src={publicAsset(site.logo.replace(/^\//, ""))}
+                alt={site.name}
+                className="h-20 w-auto object-contain rounded-xl"
+              />
+            </span>
             <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden mx-auto">
               <motion.div
                 className="h-full bg-brand-light"

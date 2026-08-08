@@ -5,26 +5,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        void: "#0a0f1a",
-        abyss: "#0f1628",
-        slate: "#1a2332",
+        void: "#12081c",
+        abyss: "#1c1229",
+        slate: "#281a39",
         glass: "rgba(255,255,255,0.04)",
         brand: {
-          DEFAULT: "#c9a227",
-          light: "#e4c04a",
-          dark: "#a68520",
-          subtle: "#f0d875",
+          DEFAULT: "#dec328",
+          light: "#ffcb05",
+          dark: "#8a7218",
+          subtle: "#f4ea7a",
         },
-        neon: {
-          cyan: "#e4c04a",
-          magenta: "#c9a227",
-          gold: "#a68520",
-          lime: "#f0d875",
+        accent: {
+          DEFAULT: "#97deff",
+          light: "#bde9fb",
+          dark: "#2061b7",
         },
         ink: {
-          DEFAULT: "#f8fafc",
-          soft: "#cbd5e1",
-          muted: "#64748b",
+          DEFAULT: "#f6f6f6",
+          soft: "#c5bfc7",
+          muted: "#8f8898",
         },
       },
       fontFamily: {
@@ -66,9 +65,10 @@ export default {
         xs: "2px",
       },
       boxShadow: {
-        neon: "0 0 20px rgba(201, 162, 39, 0.25), 0 0 60px rgba(201, 162, 39, 0.1)",
-        neonSm: "0 0 12px rgba(228, 192, 74, 0.2)",
+        neon: "0 0 20px rgba(222, 195, 40, 0.22), 0 0 60px rgba(151, 222, 255, 0.08)",
+        neonSm: "0 0 12px rgba(255, 203, 5, 0.18)",
         glass: "0 8px 32px rgba(0, 0, 0, 0.4)",
+        logo: "0 4px 24px rgba(222, 195, 40, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.08)",
       },
     },
   },
