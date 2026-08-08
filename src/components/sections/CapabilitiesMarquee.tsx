@@ -1,22 +1,21 @@
 import { capabilities } from "@/data/site";
-import { Marquee } from "@/components/ui/Marquee";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function CapabilitiesMarquee() {
   return (
-    <section className="py-6 border-b border-white/5 overflow-hidden">
-      <Marquee speed={30}>
-        <div className="flex gap-8 px-4">
+    <section className="section-band section-padding py-8 border-b border-slate/5">
+      <Reveal className="section-container">
+        <p className="text-center text-xs font-semibold uppercase tracking-wider text-ink-muted mb-5">
+          What members gain
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
           {capabilities.map((cap) => (
-            <span
-              key={cap}
-              className="font-display text-lg sm:text-xl font-semibold text-ink-muted/40 whitespace-nowrap flex items-center gap-8"
-            >
+            <span key={cap} className="pill font-medium text-slate">
               {cap}
-              <span className="text-brand-light">✦</span>
             </span>
           ))}
         </div>
-      </Marquee>
+      </Reveal>
     </section>
   );
 }

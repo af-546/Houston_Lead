@@ -13,19 +13,18 @@ export function ToastContainer() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 50 }}
-            className={`pointer-events-auto glass-panel rounded-xl px-5 py-3 flex items-center gap-3 min-w-[280px] border-l-4 ${
+            className={`pointer-events-auto pro-card px-5 py-3 flex items-center gap-3 min-w-[280px] border-l-4 ${
               toast.type === "success"
-                ? "border-l-neon-lime"
+                ? "border-l-brand"
                 : toast.type === "error"
-                  ? "border-l-neon-magenta"
-                  : "border-l-neon-cyan"
+                  ? "border-l-accent"
+                  : "border-l-slate/40"
             }`}
           >
-            <p className="flex-1 text-sm">{toast.message}</p>
+            <p className="flex-1 text-sm text-slate">{toast.message}</p>
             <button
               onClick={() => removeToast(toast.id)}
-              className="text-ink-muted hover:text-ink text-xs"
-              data-cursor="pointer"
+              className="text-ink-muted hover:text-slate text-xs"
             >
               ✕
             </button>

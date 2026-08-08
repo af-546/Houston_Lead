@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useApp } from "@/context/AppContext";
 
-export function NewsletterForm({ className = "" }: { className?: string }) {
+export function NewsletterForm({
+  className = "",
+  variant = "light",
+}: {
+  className?: string;
+  variant?: "light" | "dark";
+}) {
   const [email, setEmail] = useState("");
   const { addToast } = useApp();
 
@@ -12,6 +18,11 @@ export function NewsletterForm({ className = "" }: { className?: string }) {
     setEmail("");
   };
 
+  const inputClass =
+    variant === "dark"
+      ? "flex-1 bg-white/10 border border-white/20 rounded-md px-4 py-3 text-sm text-ink-inverse placeholder:text-ink-inverse-soft/60 outline-none focus:border-brand-light"
+      : "flex-1 bg-white border border-slate/15 rounded-md px-4 py-3 text-sm outline-none focus:border-brand";
+
   return (
     <form onSubmit={submit} className={`flex gap-3 ${className}`}>
       <input
@@ -19,11 +30,11 @@ export function NewsletterForm({ className = "" }: { className?: string }) {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email here"
-        className="flex-1 bg-white/5 border border-white/10 rounded-full px-5 py-3 text-sm outline-none focus:border-brand-light/40"
+        placeholder="Enter your email"
+        className={inputClass}
       />
-      <button type="submit" className="btn-primary text-sm py-3 px-6 shrink-0" data-cursor="pointer">
-        Subscribe Now
+      <button type="submit" className="btn-primary text-sm py-3 px-5 shrink-0">
+        Subscribe
       </button>
     </form>
   );

@@ -6,10 +6,10 @@ export function ChaptersPreview() {
 
   return (
     <section className="section-padding section-spacing">
-      <Reveal className="section-container mb-12">
+      <Reveal className="section-container mb-10">
         <p className="eyebrow mb-4">Find a chapter</p>
         <h2 className="heading-lg mb-4">22+ chapters across Houston</h2>
-        <p className="text-ink-soft max-w-xl">
+        <p className="text-ink-soft max-w-xl leading-relaxed">
           Breakfast, lunch, and afternoon meetings across Greater Houston. Find one near
           your office or target market.
         </p>
@@ -18,11 +18,11 @@ export function ChaptersPreview() {
       <RevealStagger className="section-container grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {featured.map((chapter) => (
           <RevealItem key={chapter.slug}>
-            <div className="glass-panel rounded-2xl p-6 h-full">
-              <span className="font-mono text-xs text-brand-light uppercase tracking-wider">
+            <div className="pro-card p-6 h-full">
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand-dark">
                 {chapter.area}
               </span>
-              <h3 className="font-display font-semibold text-lg mt-2">{chapter.name}</h3>
+              <h3 className="font-display font-semibold text-lg mt-2 text-slate">{chapter.name}</h3>
               <div className="mt-4 space-y-1 text-sm text-ink-soft">
                 <p>{chapter.day} · {chapter.time}</p>
                 <p className="text-ink-muted">{chapter.venue}</p>

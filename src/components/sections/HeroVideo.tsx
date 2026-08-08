@@ -26,9 +26,8 @@ export function HeroVideo() {
   };
 
   return (
-    <div className="relative w-full max-w-[560px] mx-auto group">
-      <div className="absolute -inset-4 rounded-3xl bg-brand/10 blur-3xl opacity-60" />
-      <div className="mockup-shell relative aspect-video shadow-neonSm overflow-hidden">
+    <div className="relative w-full max-w-[560px] mx-auto">
+      <div className="video-frame aspect-video">
         <video
           ref={videoRef}
           src={site.videoUrl}
@@ -39,12 +38,11 @@ export function HeroVideo() {
           playsInline
           preload="metadata"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-void/70 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3">
           <button
             type="button"
             onClick={togglePlay}
-            className="glass-panel rounded-full px-4 py-2 text-sm font-medium text-ink hover:text-brand-light transition-colors"
+            className="rounded-md bg-white/95 px-3 py-1.5 text-sm font-medium text-slate shadow-sm hover:bg-white transition-colors"
             aria-label={playing ? "Pause video" : "Play video"}
           >
             {playing ? "Pause" : "Play"}
@@ -52,7 +50,7 @@ export function HeroVideo() {
           <button
             type="button"
             onClick={toggleMute}
-            className="glass-panel rounded-full px-4 py-2 text-sm font-medium text-ink hover:text-brand-light transition-colors"
+            className="rounded-md bg-white/95 px-3 py-1.5 text-sm font-medium text-slate shadow-sm hover:bg-white transition-colors"
             aria-label={muted ? "Unmute video" : "Mute video"}
           >
             {muted ? "Unmute" : "Mute"}

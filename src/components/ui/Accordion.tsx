@@ -9,16 +9,15 @@ export function Accordion({ items }: { items: Item[] }) {
   return (
     <div className="space-y-3">
       {items.map((item, i) => (
-        <div key={i} className="glass-panel rounded-2xl overflow-hidden">
+        <div key={i} className="pro-card overflow-hidden">
           <button
             onClick={() => setOpen(open === i ? null : i)}
             className="w-full flex items-center justify-between px-6 py-5 text-left"
-            data-cursor="pointer"
           >
-            <span className="font-display font-semibold pr-4">{item.question}</span>
+            <span className="font-display font-semibold pr-4 text-slate">{item.question}</span>
             <motion.span
               animate={{ rotate: open === i ? 45 : 0 }}
-              className="text-neon-cyan text-xl flex-shrink-0"
+              className="text-brand-dark text-xl flex-shrink-0 font-light"
             >
               +
             </motion.span>
@@ -55,12 +54,11 @@ export function Tabs({
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`px-5 py-2.5 rounded-full font-display text-sm transition-all ${
+            className={`px-5 py-2.5 rounded-md font-body text-sm transition-all ${
               active === i
-                ? "bg-gradient-to-r from-neon-cyan to-neon-magenta text-void font-semibold"
-                : "glass-panel text-ink-soft hover:text-ink"
+                ? "bg-brand text-slate font-semibold"
+                : "pro-card text-ink-soft hover:text-slate"
             }`}
-            data-cursor="pointer"
           >
             {tab.label}
           </button>

@@ -37,9 +37,20 @@ type SocialLinksProps = {
   className?: string;
   iconClassName?: string;
   variant?: "row" | "stack";
+  theme?: "light" | "dark";
 };
 
-export function SocialLinks({ className = "", iconClassName = "", variant = "row" }: SocialLinksProps) {
+export function SocialLinks({
+  className = "",
+  iconClassName = "",
+  variant = "row",
+  theme = "light",
+}: SocialLinksProps) {
+  const linkClass =
+    theme === "dark"
+      ? "inline-flex items-center justify-center w-10 h-10 rounded-md bg-white/10 text-ink-inverse-soft hover:text-brand-light hover:bg-white/15 transition-colors duration-200"
+      : "inline-flex items-center justify-center w-10 h-10 rounded-md border border-slate/15 bg-white text-ink-soft hover:text-slate hover:border-slate/30 shadow-sm transition-colors duration-200";
+
   return (
     <div className={`${variant === "row" ? "flex flex-wrap gap-3" : "space-y-3"} ${className}`}>
       {socialLinks.map((link) => (
@@ -50,8 +61,7 @@ export function SocialLinks({ className = "", iconClassName = "", variant = "row
           rel="noopener noreferrer"
           aria-label={link.name}
           title={link.description || link.name}
-          className={`inline-flex items-center justify-center w-10 h-10 rounded-xl glass-panel text-ink-soft hover:text-brand-light hover:border-brand-light/30 transition-all duration-300 ${iconClassName}`}
-          data-cursor="pointer"
+          className={`${linkClass} ${iconClassName}`}
         >
           {iconMap[link.platform]}
         </a>
